@@ -12,6 +12,7 @@
                 <input name="tf_log_codigo" type="text" id="tf_log_codigo" size="20" maxlength="20"/>
             </label>
             <p>
+                
                 <label>Login:
                     <input name="tf_log_usuario" type="text" id="tf_log_usuario" size="20" maxlength="20" />
                 </label>
