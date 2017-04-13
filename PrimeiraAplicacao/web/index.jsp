@@ -74,23 +74,19 @@
                                 st.executeUpdate("DELETE FROM login where log_codigo = " + request.getParameter("codigo"));
                             }
                         }
-                        
+
                         ResultSet rs = st.executeQuery("SELECT * FROM LOGIN");
-                         
-                        if (request.getParameter("acao") != null) 
-                        {
+
+                        if (request.getParameter("acao") != null) {
                             if (request.getParameter("acao").contains("crescente")) {
                                 rs = st.executeQuery("select * from login order by log_usuario");
                             }
                         }
-                        if (request.getParameter("acao") != null) 
-                        {
+                        if (request.getParameter("acao") != null) {
                             if (request.getParameter("acao").contains("decrescente")) {
                                 rs = st.executeQuery("select * from login order by log_usuario desc");
                             }
                         }
-                        
-                       
 
                         while (rs.next()) {
 
@@ -106,7 +102,7 @@
 
                     <td><%out.println(rs.getString("log_nivel"));%></td>
 
-                    <td>Link 4: Editar</td>
+                    <td><a href="alteraUsuario.jsp?codigo=<%=rs.getString("log_codigo")%>&usuario=<%=rs.getString("log_usuario")%>&senha=<%=rs.getString("log_senha")%>"> Editar</td>
 
                     <td><a href="index.jsp?acao=excluir&codigo=<%=rs.getString("log_codigo")%>">APAGAR</a></td>
 

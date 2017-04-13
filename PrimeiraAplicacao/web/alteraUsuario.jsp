@@ -3,31 +3,32 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cadastro de usuários</title>
+        <title>Editar usuários</title>
     </head>
-    <h1>Cadastro de usuários</h1>
+    <h1>Editar usuários</h1>
     <body>
-        <form id="formInserirUsuario" name="frmCadastrar" method="post" action="cadUsuario.jsp?acao=gravar">
+        
+        <form id="formInserirUsuario" name="frmCadastrar" method="post" action="cadUsuario.jsp?acao=editar">
             <label>Código:
-                <input name="tf_log_codigo" type="text" id="tf_log_codigo" size="20" maxlength="20"/>
+                 <input name="tf_log_codigo" type="text" id="tf_log_codigo" size="20" maxlength="20" value="<%=request.getParameter("codigo")%>"/>                 
             </label>
             <p>
 
                 <label>Login:
-                    <input name="tf_log_usuario" type="text" id="tf_log_usuario" size="20" maxlength="20" />
+                    <input name="tf_log_usuario" type="text" id="tf_log_usuario" size="20" maxlength="20" value="<%=request.getParameter("usuario")%>"/>                 
                 </label>
                 <label>Senha:
-                    <input name="tf_log_senha" type="password" id="tf_log_senha" size="20" maxlength="20" />
+                     <input name="tf_log_senha" type="password" id="tf_log_senha" size="20" maxlength="20" value="<%=request.getParameter("senha")%>"/>                 
                 </label>
             </p>
             <p>
                 <label>Nível:
-                    <input name="tf_log_nivel" type="text" id="tf_log_nivel" size="5" maxlength="1" />
+                    <input name="tf_log_nivel" type="text" id="tf_log_nivel" size="5" maxlength="1" value="<%=request.getParameter("nivel")%>"/>
                 </label>
             </p>
             <p>
                 <label>
-                    <input type="submit" name="Gravar" id="gravar" value="gravar" />
+                    <input type="submit" name="Editar" id="editar" value="editar" />
                 </label>
                 <label></label>
                 <input type="reset" name="Limpar" id="Limpar" value="Limpar" />
@@ -46,12 +47,12 @@
 
                 if (request.getParameter("acao") != null) {
 
-                    if (request.getParameter("tf_log_usuario").length() == 0) {
+                    if (request.getParameter("tf_log_usuario").length() == 0) { 
 
                         response.sendRedirect("cadUsuario.jsp");
 
                     } else {
-                        if (request.getParameter("acao").contains("gravar")) {
+                        if (request.getParameter("acao").contains("editar")) {
                             st.executeUpdate("INSERT INTO LOGIN VALUES (" + request.getParameter("tf_log_codigo")
                                     + ",'" + request.getParameter("tf_log_usuario") + "','" + request.getParameter("tf_log_senha")
                                     + "','" + request.getParameter("tf_log_nivel") + "')");
