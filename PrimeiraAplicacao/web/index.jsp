@@ -2,6 +2,7 @@
     Document   : cadastro
     Created on : 29/03/2017, 21:21:31
     Author     : Matheus
+    ----------------------------------
 --%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 
@@ -102,7 +103,7 @@
 
                     <td><%out.println(rs.getString("log_nivel"));%></td>
 
-                    <td><a href="alteraUsuario.jsp?codigo=<%=rs.getString("log_codigo")%>&usuario=<%=rs.getString("log_usuario")%>&senha=<%=rs.getString("log_senha")%>"> Editar</td>
+                    <td><a href="alteraUsuario.jsp?codigo=<%=rs.getString("log_codigo")%>&usuario=<%=rs.getString("log_usuario")%>&senha=<%=rs.getString("log_senha")%>&nivel=<%=rs.getString("log_nivel")%>"> Editar</td>
 
                     <td><a href="index.jsp?acao=excluir&codigo=<%=rs.getString("log_codigo")%>">APAGAR</a></td>
 
