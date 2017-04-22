@@ -8,7 +8,7 @@
     <h1>Editar usuários</h1>
     <body>
         
-        <form id="formInserirUsuario" name="frmCadastrar" method="post" action="cadUsuario.jsp?acao=editar">
+        <form id="formAlteraUsuario" name="frmEditar" method="post" action="alteraUsuario.jsp?acao=editar">
             <label>Código:
                  <input name="tf_log_codigo" type="text" id="tf_log_codigo" size="20" maxlength="20" value="<%=request.getParameter("codigo")%>"/>                 
             </label>
@@ -28,7 +28,7 @@
             </p>
             <p>
                 <label>
-                    <input type="submit" name="Editar" id="editar" value="editar" />
+                    <input type="submit" name="editar" id="editar" value="editar" />
                 </label>
                 <label></label>
                 <input type="reset" name="Limpar" id="Limpar" value="Limpar" />
@@ -52,10 +52,13 @@
                         response.sendRedirect("cadUsuario.jsp");
 
                     } else {
+                             //out.println("Teste1");
                         if (request.getParameter("acao").contains("editar")) {
-                            st.executeUpdate("INSERT INTO LOGIN VALUES (" + request.getParameter("tf_log_codigo")
-                                    + ",'" + request.getParameter("tf_log_usuario") + "','" + request.getParameter("tf_log_senha")
-                                    + "','" + request.getParameter("tf_log_nivel") + "')");
+                             //out.println("Teste2");
+                             
+                          String sql = ("update login set log_usuario='"+request.getParameter("tf_usuario")+"',log_senha='"+request.getParameter("tf_senha")+"',log_nivel='"+request.getParameter("tf_nivel")+"' where log_codigo="+request.getParameter("tf_codigo"));
+                             
+                          st.executeUpdate(sql);
                         }
                     }
                 }

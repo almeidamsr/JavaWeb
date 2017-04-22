@@ -26,6 +26,8 @@
 
             <strong><u>Manutenção da base de logins</u></strong></p>
 
+        <p><a href="notas.jsp">Notas</a></p>
+        
         <p><a href="cadUsuario.jsp">Novo Registro</a></p>
 
         <p><a href="index.jsp?acao=crescente">Crescente</a></p>
