@@ -132,3 +132,21 @@
     </body>
 
 </html>
+
+<!--9.1 Mostra na tela TESTE TESTE TESTE.
+9.1 Exibe a mesma mensagem.
+10.1 Reprovado
+10.1 sim
+10.1 não mostra erro pois não tem o try e catch
+11.1 o valor da nota
+12.2 da erro porque era uma pagina html. inserir esse codigo acima < % @ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+16.2  st.executeQuery("SELECT * FROM LOGIN");
+18.1 sim carregou
+20.4 não permitir exibir a mensagem na primeira execução que sempre sera 0
+24 são parametros especificos não interferem na execução da query
+25 da erro sql e não cadastra
+25 no tamanho dos inputs
+25 não cadastra, o codigo é chave primaria
+22.6 erro na execução da query
+25.1 não permite entra no index sem login erro sql. no meu caso eu permiti.
+22.6 Seria executeQuery ao inves de executeUpdate-->
